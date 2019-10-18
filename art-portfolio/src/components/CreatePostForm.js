@@ -1,8 +1,16 @@
 import React from "react";
+import axios from "axios";
 
 class CreatePostForm extends React.Component {
   state = {};
 
+  componentDidMount(prevProps) {
+    axios.get(`https://artportfoliobw.herokuapp.com/`).then(res => {
+      console.log(res.data);
+      // const persons = res.data;
+      // this.setState({ persons });
+    });
+  }
   componentDidUpdate(prevProps) {}
 
   changeHandler = e => {
