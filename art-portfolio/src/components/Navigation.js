@@ -12,11 +12,11 @@ const Navigation = () => {
       <NavLink to={`/about`}>About</NavLink>
       <NavLink to={`/signIn`}>Sign-In</NavLink>
 
-      {/* <Route exact path="/" component={App} />
+      <Route exact path="/" component={App} />
 
       <Route exact path="/about" component={AboutUs} />
 
-      <Route exact path="/signIn" component={SignIn} /> */}
+      <Route exact path="/signIn" component={SignIn} />
     </nav>
   );
 };
