@@ -8,32 +8,37 @@ import '../styles/Login.scss';
 
 const Login = ({ errors, touched, values, status }) => {
 
-  const [userName, setUsername] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   return(
     <div className='login-form'>
       <Form>
-        <label className='username-input'>
+        <label className='username-label'>
           Username
         </label>
 
+        <div className='input-fields'>
           <Field
-            className='username'
-            component='input'
-            type='text'
-            name='username'
-            placeholder='Username'
-          />
+              className='username'
+              component='input'
+              type='text'
+              name='username'
+              placeholder='Username'
+            />
 
-        <Field
-          className='password'
-          component='input'
-          type='password'
-          name='password'
-          placeholder='Password'
-        />
-        <button>Log In</button>
+          <Field
+            className='password'
+            component='input'
+            type='password'
+            name='password'
+            placeholder='Password'
+          />
+        </div>
+
+        <div className='input-btn'>
+          <button>Log In</button>
+        </div>
       </Form>
     </div>
   )
