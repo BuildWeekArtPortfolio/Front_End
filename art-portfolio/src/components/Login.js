@@ -3,6 +3,8 @@ import { Form, Field, withFormik, Formik } from 'formik';
 import * as Yup from 'yup';
 import { AxiosWithAuth } from '../utils/AxiosWithAuth';
 
+import LoginImage from './LoginImage';
+import Logo from '../assets/portrait.jpg';
 import '../styles/Login.scss';
 
 
@@ -12,11 +14,20 @@ const Login = ({ errors, touched, values, status }) => {
   const [password, setPassword] = useState('');
 
   return(
-    <div className='login-form'>
+
+  <div className='login-form'>
+
+    <LoginImage />
+
+    <div className='form'>
       <Form>
         <label className='username-label'>
           Username
         </label>
+
+      <div className='avatar'>
+        <img src={Logo} alt='avatar' className='avatar'/>
+      </div>
 
         <div className='input-fields'>
           <Field
@@ -41,7 +52,8 @@ const Login = ({ errors, touched, values, status }) => {
         </div>
       </Form>
     </div>
-  )
+  </div>
+  );
 }
 // class Login extends React {
 

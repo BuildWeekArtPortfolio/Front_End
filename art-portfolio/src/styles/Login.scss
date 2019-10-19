@@ -1,53 +1,24 @@
 .login-form{
-  border: 1px solid black;
-  border-radius: 2rem;
-  width: 35%;
-  margin: 0 auto;
-  padding: 1rem 0 3rem 0;
-  // background-color: azure;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form{
+  justify-content: flex-end;
+  width: 30%;
+  height: 52.3rem;
   background-color: rgba(202, 202, 200, 0.6);
+}
 
-  text-align: center;
-  // height: 35vh;
-  // background: linear-gradient(223deg, #fef9c7, #fce181);
-  // background-size: 200% 400%;
-  // -webkit-animation: AnimationName 25s ease infinite;
-  // -moz-animation: AnimationName 25s ease infinite;
-  // animation: AnimationName 25s ease infinite;
+.login-bg{
+  width: 71%;
+}
 
-  // @-webkit-keyframes AnimationName {
-  //   0% {
-  //     background-position: 96% 0%;
-  //   }
-  //   50% {
-  //     background-position: 5% 100%;
-  //   }
-  //   100% {
-  //     background-position: 96% 0%;
-  //   }
-  // }
-  // @-moz-keyframes AnimationName {
-  //   0% {
-  //     background-position: 96% 0%;
-  //   }
-  //   50% {
-  //     background-position: 5% 100%;
-  //   }
-  //   100% {
-  //     background-position: 96% 0%;
-  //   }
-  // }
-  // @keyframes AnimationName {
-  //   0% {
-  //     background-position: 96% 0%;
-  //   }
-  //   50% {
-  //     background-position: 5% 100%;
-  //   }
-  //   100% {
-  //     background-position: 96% 0%;
-  //   }
-  // }
+.avatar{
+  height: 12rem;
+  width: 12rem;
+  border-radius: 15rem;
+  margin: 2rem auto;
 }
 
 .username-label{
@@ -55,21 +26,22 @@
 }
 
 .input-fields{
-  width: 52%;
+  width: 75%;
+  padding: 2rem 0 0 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .username, .password{
-  height: 2.2rem;
+  height: 2.8rem;
   margin: 0 0 1.3rem 0;
   border-radius: 14px;
   text-align: center;
 }
 
 button{
-  width: 67%;
+  width: 75%;
   height: 2.8rem;
   margin: 2rem 0 0 0;
   border-radius: 1em;
