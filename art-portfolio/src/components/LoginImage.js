@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/antique-background.jpg';
+import Logo from '../assets/camera.jpg';
 
 export default function LoginImage() {
 

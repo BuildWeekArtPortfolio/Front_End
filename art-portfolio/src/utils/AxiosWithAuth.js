@@ -1,13 +1,13 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export const AxiosWithAuth = () => {
+export const AxiosWithAuth = () => {
 
-//   const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
 
-//   return axios.create({
-//     baseURL: (),
-//     headers: {
-//       Authorization: token
-//     }
-//   });
-// };
+  return axios.create({
+    baseURL: ("https://dog.ceo/api/breeds/image/random"),
+    headers: {
+      Authorization: token
+    }
+  });
+};
