@@ -13,22 +13,22 @@ class App extends React.Component {
     }
   }
 
-  putEdit = ( id, updatedPost) => {
-    Axios
-      .put(`/${id}`, updatedPost)
-      .then(res => {
-        this.setState({
-          putError: '',
-          putSuccess: ''
-        });
-      })
-      .catch(err => {
-        this.setState({
-          putError: '',
-          putSuccess: ''
-        })
-      });
-  };
+  // putEdit = ( id, updatedPost) => {
+  //   Axios
+  //     .put(`/${id}`, updatedPost)
+  //     .then(res => {
+  //       this.setState({
+  //         putError: '',
+  //         putSuccess: ''
+  //       });
+  //     })
+  //     .catch(err => {
+  //       this.setState({
+  //         putError: '',
+  //         putSuccess: ''
+  //       })
+  //     });
+  // };
 
   render() {
     return (
