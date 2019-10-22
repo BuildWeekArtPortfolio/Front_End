@@ -1,43 +1,14 @@
 import React from "react";
-import "./styles/App.scss";
-import Login from './components/Login'
-import Axios from "axios";
+import "./App.css";
+import Navigation from "./components/Navigation";
 
-class App extends React.Component {
-
-  constructor(){
-    super();
-    this.state = {
-      putSuccess: '',
-      putError: ''
-    }
-  }
-
-  // putEdit = ( id, updatedPost) => {
-  //   Axios
-  //     .put(`/${id}`, updatedPost)
-  //     .then(res => {
-  //       this.setState({
-  //         putError: '',
-  //         putSuccess: ''
-  //       });
-  //     })
-  //     .catch(err => {
-  //       this.setState({
-  //         putError: '',
-  //         putSuccess: ''
-  //       })
-  //     });
-  // };
-
-  render() {
-    return (
-      <div className="App">
-        {/* <h1>Art Portfolio</h1> */}
-        <Login/>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Navigation />
+      <h1>placeholder</h1>
+    </div>
+  );
 }
 
 export default App;
