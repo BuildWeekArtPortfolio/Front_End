@@ -1,12 +1,14 @@
 import React from 'react';
 
 const AboutCard = (props) => {
-    console.log("props.photos.fname", props.photos.fname);
+
     return (
         <div>
-            <h1>{props.photos.map((obj) => {
-                console.log("obj", obj)
-                            })}</h1>
+            <h1>
+                {props.photos.map((person) => {
+                return <p>{person.fname} {person.lname} {person.email}</p>
+                })}
+            </h1>
         </div>
     )
 }
