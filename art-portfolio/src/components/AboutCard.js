@@ -1,19 +1,25 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledCardDiv = styled.div`
+  max-width: 700px;
+  width: 70%;
+  padding: 15px;
+  margin: 0, auto;
+  border: 1px solid black;
+`
 
 const AboutCard = props => {
-  console.log("props.photos", props.photos);
+  console.log("props", props);
   return (
-    <div>
-      <h1>
-        {props.photos.map(person => {
-          return (
-            <p>
-              {person.photos}
-            </p>
-          );
-        })}
-      </h1>
-    </div>
+    <StyledCardDiv>
+      {props.person.fname}
+      {props.person.lname}
+      <img src={props.person.avatar} />
+      <img src={props.person.src} />
+      {props.person.likes}
+      {props.person.description}
+    </StyledCardDiv>
   );
 };
 

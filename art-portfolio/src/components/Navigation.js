@@ -2,20 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+
 const StyledNavLink = styled(NavLink)`
 text-decoration: none;
-padding: 20px 0px;
+padding: 20px 0;
 `
 
 const StyledNav = styled.nav`
-font-family: 'Railway';
-text-decoration: none;
-border: 1px solid black;
-width: 80%;
+font-family: 'Raleway';
 display: flex;
 justify-content: space-around;
+border: 1px solid black;
+width: 80%;
 margin: 0 auto;
 `
+
 
 const Navigation = () => {
   return (
