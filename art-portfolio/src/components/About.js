@@ -7,7 +7,7 @@ const AboutUs = () => {
 const [photos, setPhotos] = useState([]);
 
 useEffect( () => {
-  axios.get('https://artportfoliobw.herokuapp.com/')
+  axios.get('https://art-po-bw.herokuapp.com/')
   .then(response => {
     console.log(response.data)
     return setPhotos(response.data);
@@ -16,7 +16,7 @@ useEffect( () => {
 
   return (
     <div>
-      {photos.map(() => <AboutCard photos={photos} />)}
+      {photos.map((person) => <AboutCard person={person} key={Math.random()} />)}
     </div>
   );
 };
