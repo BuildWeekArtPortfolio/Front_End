@@ -15,7 +15,7 @@ useEffect( () => {
 
   return (
     <div>
-      {photos.map(() => <AboutCard photos={photos} />)}
+      {photos.map(() => <HomeCard photos={photos} />)}
     </div>
   );
 };
