@@ -5,7 +5,7 @@ export const AxiosWithAuth = () => {
   const token = localStorage.getItem('token');
 
   return axios.create({
-    baseURL: ("https://dog.ceo/api/breeds/image/random"),
+    baseURL: ("localhost:3200/api"),
     headers: {
       Authorization: token
     }

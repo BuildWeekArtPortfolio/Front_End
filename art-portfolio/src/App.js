@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/App.scss";
 import Login from './components/Login'
-import Axios from "axios";
+import axios from "axios";
 
 class App extends React.Component {
 

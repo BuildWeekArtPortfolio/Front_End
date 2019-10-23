@@ -21,8 +21,12 @@ class Login extends React.Component {
     console.log("something");
 
     AxiosWithAuth()
-    .post('/login', '')
-    .then(res => console.log('LOGIN2 > AXIOSWITHAUTH', res))
+    .post('/login', this.state.credentials)
+    .then(res => {
+      // console.log('LOGIN2 > AXIOSWITHAUTH', res)
+      localStorage.setItem('token', res.data.payload)
+      this.props.history.push('/profile')
+    })
     .catch(err => console.log('UNABLE TO POST REQUEST', err))
   }
 
@@ -41,18 +45,15 @@ render(){
 
       <div className='form'>
         <form onSubmit={this.handleSubmit}>
-          {/* <label className='username-label'>
-            Username
-          </label> */}
 
         <div className='avatar'>
           <img src={Logo} alt='avatar' className='avatar'/>
         </div>
 
           <div className='input-fields'>
+
             <input
                 className='username'
-                // component='input'
                 type='text'
                 name='username'
                 value={this.username}
@@ -62,7 +63,6 @@ render(){
 
             <input
               className='password'
-              // component='input'
               type='password'
               name='password'
               placeholder='Password'
@@ -72,7 +72,7 @@ render(){
           </div>
 
           <div className='input-btn'>
-          <button>Log In</button>
+            <button>Log In</button>
           </div>
 
         </form>
