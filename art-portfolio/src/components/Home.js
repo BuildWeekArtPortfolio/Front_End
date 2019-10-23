@@ -1,11 +1,24 @@
 import React from 'react';
+import HomeCard from './HomeCard';
 
 const Home = () => {
-    return (
-        <>
-            <h1>Home</h1>
-        </>
-    )
-}
+
+    const [photos, setPhotos] = useState([]);
+
+useEffect( () => {
+  axios.get('https://artportfoliobw.herokuapp.com/')
+  .then(response => {
+    console.log(response.data)
+    return setPhotos(response.data);
+  })
+}, [])
+
+  return (
+    <div>
+      {photos.map(() => <AboutCard photos={photos} />)}
+    </div>
+  );
+};
+
 
 export default Home;
