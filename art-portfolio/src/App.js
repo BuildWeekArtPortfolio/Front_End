@@ -1,18 +1,51 @@
 import React from "react";
 import "./App.css";
-import { Route } from 'react-router-dom';
 import Navigation from "./components/Navigation";
-import AboutUs from "./components/About";
-import SignIn from "./components/SignIn";
 import Routes from "./routes/Routes";
+import "./styles/App.scss";
+import Login from './components/Login'
+import Register from './components/Register';
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <Navigation />
-      <Routes />
-    </div>
-  );
+
+class App extends React.Component {
+
+  constructor(){
+    super();
+    this.state = {
+      putSuccess: '',
+      putError: ''
+    }
+  }
+
+  // putEdit = ( id, updatedPost) => {
+  //   Axios
+  //     .put(`/${id}`, updatedPost)
+  //     .then(res => {
+  //       this.setState({
+  //         putError: '',
+  //         putSuccess: ''
+  //       });
+  //     })
+  //     .catch(err => {
+  //       this.setState({
+  //         putError: '',
+  //         putSuccess: ''
+  //       })
+  //     });
+  // };
+
+  render() {
+    return (
+      <div className="App">
+        {/* <h1>Art Portfolio</h1> */}
+        <Login/>
+        <Register />
+        <Navigation /> 
+        <Routes />
+      </div>
+    );
+  }
 }
 
 export default App;
