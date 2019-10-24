@@ -6,13 +6,13 @@ import styled from "styled-components";
 const StyledNavLink = styled(NavLink)`
 text-decoration: none;
 padding: 20px 0;
+color: #002438;
 `
 
 const StyledNav = styled.nav`
 font-family: 'Raleway';
 display: flex;
 justify-content: space-around;
-border: 1px solid black;
 width: 80%;
 margin: 0 auto;
 `

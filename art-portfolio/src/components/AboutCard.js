@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Main = styled.div`
   margin: 20px auto 50px auto;
   width: 50%;
+  padding-top: 5px;
 `;
 
 const Card = styled.div`
@@ -29,20 +30,38 @@ const CardBody = styled.div`
 const CardTitle = styled.div`
   text-transform: capitalize;
   font-weight: 600;
+  color: #00b1ff;
 `;
 const CardSubtitle = styled.div`
   margin-top: 10px;
   font-size: 14px;
   text-transform: capitalize;
-  color: #787878;
+  color: #003452;
+  font-weight: bold;
   a {
     text-decoration: none;
     color: #00b1ff;
   }
 `;
 
+const Button = styled.button`
+color: black;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid gold;
+  border-radius: 3px;
+`
+
 const AboutCard = props => {
   console.log("props", props);
+  
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+
   return (
     <Main>
       <Card>
@@ -57,7 +76,11 @@ const AboutCard = props => {
             {props.person.lname}
           </CardTitle>
 
-          <CardSubtitle>{props.person.likes}</CardSubtitle>
+          {/* <CardSubtitle>Likes<div />{props.person.likes}</CardSubtitle> */}
+          <CardSubtitle>
+            Likes<Button>{props.person.likes}</Button>
+          </CardSubtitle>
+
           <CardSubtitle>{props.person.description}</CardSubtitle>
         </CardBody>
       </Card>
