@@ -7,7 +7,7 @@ const AboutUs = () => {
 const [photos, setPhotos] = useState([]);
 
 useEffect( () => {
-  axios.get('https://art-po-bw.herokuapp.com/')
+  axios.get('https://artportfoliobw.herokuapp.com/')
   .then(response => {
     console.log(response.data)
     return setPhotos(response.data);

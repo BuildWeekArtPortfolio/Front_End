@@ -15,7 +15,7 @@ padding-left: 40px;
 
 
 const AboutCard = (props) => {
-    console.log("props", props)
+
     return (
             <StyledCardDiv>
                 <img src={props.person.avatar} />
