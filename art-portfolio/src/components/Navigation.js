@@ -1,20 +1,30 @@
 import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import AboutUs from "./About";
-import SignIn from "./SignIn";
+
+
+const StyledNavLink = styled(NavLink)`
+text-decoration: none;
+padding: 20px 0;
+`
+
+const StyledNav = styled.nav`
+font-family: 'Raleway';
+display: flex;
+justify-content: space-around;
+border: 1px solid black;
+width: 80%;
+margin: 0 auto;
+`
+
 
 const Navigation = () => {
   return (
-    <nav>
-      <NavLink to={`/`}>home</NavLink>
-      <NavLink to={`/about`}>About</NavLink>
-      <NavLink to={`/signIn`}>Sign-In</NavLink>
-
-      <Route exact path="/" /> 
-      <Route exact path="/about" component={AboutUs} />
-      <Route exact path="/signIn" component={SignIn} />
-    </nav>
+    <StyledNav>
+      <StyledNavLink to={`/`}>Home</StyledNavLink>
+      <StyledNavLink to={`/about`}>About</StyledNavLink>
+      <StyledNavLink to={`/signIn`}>Sign-In</StyledNavLink>
+    </StyledNav>
   );
 };
 

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import AboutCard from './AboutCard';
 
 const AboutUs = () => {
+
+const [photos, setPhotos] = useState([]);
+
+useEffect( () => {
+  axios.get('https://artportfoliobw.herokuapp.com/')
+  .then(response => {
+    console.log(response.data)
+    return setPhotos(response.data);
+  })
+}, [])
+
   return (
     <div>
-      <h1>About us </h1>
+      {photos.map((person) => <AboutCard person={person} key={Math.random()} />)}
     </div>
   );
 };
