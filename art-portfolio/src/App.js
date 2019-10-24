@@ -16,17 +16,17 @@ class App extends React.Component {
   }
 
   // putEdit = ( id, updatedPost) => {
-  //   Axios
-  //     .put(`/${id}`, updatedPost)
+  //   axios
+  //     .put(`/art/:id/${id}`, updatedPost)
   //     .then(res => {
   //       this.setState({
-  //         putError: '',
+  //         putError: res.data.putSuccess,
   //         putSuccess: ''
   //       });
   //     })
   //     .catch(err => {
   //       this.setState({
-  //         putError: '',
+  //         putError: err.data.Error,
   //         putSuccess: ''
   //       })
   //     });

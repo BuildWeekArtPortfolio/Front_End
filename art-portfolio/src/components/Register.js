@@ -19,13 +19,9 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Register");
 
     AxiosWithAuth()
     .post( '/auth/register', {
-      // "firstName": this.state.firstName,
-      // "lastName": this.state.lastName,
-      // "email": this.state.email,
       "username": this.state.credentials.username,
       "password": this.state.credentials.password
     })
@@ -54,30 +50,6 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
   
             <div className='input-fields'>
 
-              <input
-                  className='first-name'
-                  type='text'
-                  name='firstName'
-                  value={this.firstName}
-                  onChange={this.handleChange}
-                  placeholder='First Name'
-                />
-              <input
-                  className='lastName'
-                  type='text'
-                  name='lastName'
-                  value={this.lastName}
-                  onChange={this.handleChange}
-                  placeholder='lastName'
-                />
-              <input
-                  className='email'
-                  type='text'
-                  name='email'
-                  value={this.email}
-                  onChange={this.handleChange}
-                  placeholder='email'
-                />
               <input
                   className='username'
                   type='text'
