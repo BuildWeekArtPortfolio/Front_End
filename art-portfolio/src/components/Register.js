@@ -1,6 +1,6 @@
 import React from 'react';
 import { AxiosWithAuth } from '../utils/AxiosWithAuth';
-
+// import Axios from 'axios';
 
 
   class Register extends React.Component {
@@ -8,6 +8,9 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
       super(props);
         this.state = {
           credentials: {
+            firstName: '',
+            lastName: '',
+            email: '',
             username: '',
             password: ''
           }
@@ -16,17 +19,15 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Register");
 
     AxiosWithAuth()
-    .post( 'https://art-po-bw.herokuapp.com/register', {
-      "username": e.username,
-      "password": e.password
+    .post( '/auth/register', {
+      "username": this.state.credentials.username,
+      "password": this.state.credentials.password
     })
     .then(res => {
       console.log(res);
       localStorage.setItem('token', res.data.token);
-      // this.props.history.push('/profile')
     })
     .catch(err => console.log('REGISTER > UNABLE TO POST REQUEST', err))
   }
@@ -41,7 +42,9 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
   render(){
     return(
       <div className='login-form'>
-  
+        {
+          console.log(this.state.username, this.state.password)
+        }
         <div className='form'>
           <form onSubmit={this.handleSubmit}>
   
@@ -67,7 +70,7 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
             </div>
   
             <div className='input-btn'>
-              <button>Log In</button>
+              <button>Sign Up</button>
             </div>
   
           </form>

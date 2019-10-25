@@ -17,10 +17,10 @@ class Login extends React.Component {
     console.log("something");
 
     AxiosWithAuth()
-    .post('/login', this.state.credentials)
+    .post('/auth/login', this.state.credentials)
     .then(res => {
-      localStorage.setItem('token', res.data.payload)
-      this.props.history.push('/profile')
+      console.log(res)
+      localStorage.setItem('token', res.data.message.split(' ')[2])
     })
     .catch(err => console.log('UNABLE TO POST REQUEST', err))
   }
