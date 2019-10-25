@@ -8,19 +8,19 @@ background-color: #002438;
 `;
 
 const AboutUs = () => {
-  const [object, setObject] = useState([]);
+  const [person, setPerson] = useState([]);
 
   useEffect( () => {
     axios.get('https://artportfoliobw.herokuapp.com/')
     .then(response => {
       console.log(response.data)
-      return setObject(response.data);
+      return setPerson(response.data);
     })
   }, [])
 
   return (
     <Body>
-      {object.map(person => (
+      {person.map(person => (
         <AboutCard person={person} key={Math.random()} />
       ))}
     </Body>
