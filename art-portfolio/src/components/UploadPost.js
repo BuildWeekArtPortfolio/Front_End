@@ -1,9 +1,12 @@
 import React from 'react';
+import axios from "axios";
 
+
+class UploadPost extends React.Component {
 
 state = {};
   componentDidMount(prevProps) {
-    axios.get(`https://artportfoliobw.herokuapp.com/`).then(res => {
+    axios.get(`https://art-po-bw.herokuapp.com/art/add`).then(res => {
       console.log(res.data);
       // const persons = res.data;
       // this.setState({ persons });
@@ -41,3 +44,5 @@ state = {};
     );
   }
 }
+
+export default UploadPost;
