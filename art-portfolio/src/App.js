@@ -2,8 +2,11 @@ import React from "react";
 import "./styles/App.scss";
 import Login from './components/Login'
 import Register from './components/Register';
+import UploadPost from './components/UploadPost';
 
+import PrivateRoute from './routes/PrivateRoute';
 import axios from "axios";
+import { Upload } from "antd";
 
 class App extends React.Component {
 
@@ -38,6 +41,12 @@ class App extends React.Component {
         {/* <h1>Art Portfolio</h1> */}
         <Login/>
         <Register />
+        
+        <PrivateRoute 
+          exact
+          path='/upload'
+          component={UploadPost}
+        />
       </div>
     );
   }
