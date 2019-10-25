@@ -1,44 +1,54 @@
 import React from 'react';
-import axios from "axios";
+import { AxiosWithAuth } from '../utils/AxiosWithAuth';
 
 
 class UploadPost extends React.Component {
 
-state = {};
-  componentDidMount(prevProps) {
-    axios.get(`https://art-po-bw.herokuapp.com/art/add`).then(res => {
-      console.log(res.data);
-      // const persons = res.data;
-      // this.setState({ persons });
-    });
-  }
-  componentDidUpdate(prevProps) {}
+    state = {
+        id: Date.now(), 
+        images: 'hello.jpg', 
+        artistID: '1',
+        caption: ''
+    };
+
   changeHandler = e => {
     e.persist();
+    this.setState({
+        [e.target.name]: e.target.value
+    })
   };
-  handleSubmit = e => {};
+
+
+  handleSubmit = e => {
+      e.preventDefault();
+      console.log(this.state)
+      AxiosWithAuth().post(`art/add`, this.state)
+      .then(res => {console.log("res", res)})
+      .catch(err => {console.log("err", err)})
+  };
+
   render() {
     return (
       <div>
         <h2>Create New Post</h2>
         <form onSubmit={this.handleSubmit}>
           <input
-            type="string"
-            name="imageUrl"
+            type="text"
+            name="images"
             onChange={this.changeHandler}
             placeholder="Image"
-            // value={this.state}
+            value={this.state.images}
           />
           <div />
           <input
-            type="string"
-            name="description"
+            type="text"
+            name="caption"
             onChange={this.changeHandler}
-            placeholder="Description"
-            // value={this.state}
+            placeholder="Caption"
+            value={this.state.caption}
           />
           <div />
-          <button>Create Post</button>
+          <button type="submit">Create Post</button>
         </form>
       </div>
     );
