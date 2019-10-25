@@ -39,8 +39,6 @@ class App extends React.Component {
     return (
       <div className="App">
         {/* <h1>Art Portfolio</h1> */}
-        <Login/>
-        <Register />
         <Navigation /> 
         <Routes />
       </div>

@@ -23,7 +23,8 @@ const Navigation = () => {
     <StyledNav>
       <StyledNavLink to={`/`}>Home</StyledNavLink>
       <StyledNavLink to={`/about`}>About</StyledNavLink>
-      <StyledNavLink to={`/signIn`}>Sign-In</StyledNavLink>
+      <StyledNavLink to={`/login`}>Log In</StyledNavLink>
+      <StyledNavLink to={`/register`}>Register</StyledNavLink>
     </StyledNav>
   );
 };
