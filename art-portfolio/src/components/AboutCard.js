@@ -80,7 +80,7 @@ const AboutCard = props => {
           <CardSubtitle>
             Likes<Button>{props.person.likes}</Button>
           </CardSubtitle>
-
+a
           <CardSubtitle>{props.person.description}</CardSubtitle>
         </CardBody>
       </Card>
