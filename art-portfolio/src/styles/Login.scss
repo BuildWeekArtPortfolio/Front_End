@@ -1,0 +1,49 @@
+.login-form{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form{
+  justify-content: flex-end;
+  width: 30%;
+  height: 52.3rem;
+  background-color: white;
+  // background-color: rgba(202, 202, 200, 0.6);
+}
+
+.login-bg{
+  width: 71%;
+}
+
+.avatar{
+  height: 12rem;
+  width: 12rem;
+  border-radius: 15rem;
+  margin: 2rem auto;
+}
+
+.username-label{
+  visibility: hidden;
+}
+
+.input-fields{
+  width: 75%;
+  padding: 2rem 0 0 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.username, .password{
+  height: 2.8rem;
+  margin: 0 0 1.3rem 0;
+  border-radius: 14px;
+  text-align: center;
+}
+
+button{
+  width: 75%;
+  height: 2.8rem;
+  margin: 2rem 0 0 0;
+  border-radius: 1em;
+}
