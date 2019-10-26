@@ -25,3 +25,35 @@
   display: inline-block;
   padding-right: 10px;
 }
+
+.display {
+  position: relative;
+}
+
+.nodisplay {
+  display: none;
+}
+
+.alliesbutton:hover {
+  background-color: #850000; /* Green */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.alliesbutton {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #850000;
+  padding: 6px 27px;
+  font-size: 1rem;
+  margin: 4px 2px;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
