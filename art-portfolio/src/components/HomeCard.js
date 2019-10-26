@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledCardDiv = styled.div`
@@ -31,13 +31,15 @@ width: 90%;
 
 const HomeCard = (props) => {
 
+        const [likes, setLikes] = useState(props.user.likes)
+
         return (
                 <StyledCardDiv>
                         <StyledImg src={props.user.avatar} />
                         <StyledSpan />
                         {`${props.user.fname} ${props.user.lname}`}
                         <StyledSpan />
-                        <i class="far fa-heart"></i> 
+                        <i className="far fa-heart" onClick={() => setLikes(likes + 1)}></i> 
                         {props.user.likes}
                         <br />
                         <StyledLrgImg src={props.user.src} />

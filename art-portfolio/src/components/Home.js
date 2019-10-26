@@ -17,7 +17,7 @@ useEffect( () => {
   return (
     <div>
     <UploadPost />
-      {userInfo.map((user) => <HomeCard user={user} />)}
+      {userInfo.map((user) => <HomeCard user={user} key={Math.random()} />)}
     </div>
   );
 };
