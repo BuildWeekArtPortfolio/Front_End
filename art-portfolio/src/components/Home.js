@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HomeCard from './HomeCard';
+import UploadPost from './UploadPost';
 
 const Home = () => {
 
@@ -9,14 +10,14 @@ const Home = () => {
 useEffect( () => {
   axios.get('https://artportfoliobw.herokuapp.com/')
   .then(response => {
-    console.log(response.data)
     return setUserInfo(response.data);
   })
 }, [])
 
   return (
     <div>
-      {userInfo.map((user) => <HomeCard user={user} />)}
+    <UploadPost />
+      {userInfo.map((user) => <HomeCard user={user} key={Math.random()} />)}
     </div>
   );
 };
