@@ -30,7 +30,6 @@ width: 90%;
 
 
 const HomeCard = (props) => {
-console.log("props", props)
 
         return (
                 <StyledCardDiv>

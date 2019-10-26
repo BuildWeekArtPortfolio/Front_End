@@ -21,6 +21,7 @@ class Login extends React.Component {
     .then(res => {
       console.log(res)
       localStorage.setItem('token', res.data.message.split(' ')[2])
+      this.props.history.push('/');
     })
     .catch(err => console.log('UNABLE TO POST REQUEST', err))
   }
