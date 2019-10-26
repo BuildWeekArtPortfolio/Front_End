@@ -45,21 +45,22 @@ const CardSubtitle = styled.div`
 `;
 
 const Button = styled.button`
-color: black;
+  color: black;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
   border: 2px solid gold;
   border-radius: 3px;
-`
+`;
 
 const AboutCard = props => {
-  console.log("props", props);
-  
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    setCount(count + 1);
-  };
+  console.log("propys", props);
+const like = props.person.likes;
+// const [count, setCounter] = useState(0);
+// const likeButton = (prop) => {
+
+//   setCounter(count + 1)
+// }
 
 
   return (
@@ -76,11 +77,10 @@ const AboutCard = props => {
             {props.person.lname}
           </CardTitle>
 
-          {/* <CardSubtitle>Likes<div />{props.person.likes}</CardSubtitle> */}
           <CardSubtitle>
-            Likes<Button>{props.person.likes}</Button>
+            Likes<Button>{like}</Button>
           </CardSubtitle>
-a
+
           <CardSubtitle>{props.person.description}</CardSubtitle>
         </CardBody>
       </Card>
