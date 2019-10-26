@@ -44,7 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {/* <h1>Art Portfolio</h1> */}        
+        {/* <h1>Art Portfolio</h1> */}
         <PrivateRoute 
           exact
           path='/upload'

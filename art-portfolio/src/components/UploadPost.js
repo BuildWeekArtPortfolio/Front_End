@@ -21,7 +21,10 @@ class UploadPost extends React.Component {
   handleSubmit = e => {
       e.preventDefault();
       console.log(this.state)
-      AxiosWithAuth().post(`art/add`, this.state)
+      AxiosWithAuth().post(`art/add`, {
+        'images': e.images,
+        "caption": e.caption
+      })
       .then(res => {console.log("res", res)})
       .catch(err => {console.log("err", err)})
   };
