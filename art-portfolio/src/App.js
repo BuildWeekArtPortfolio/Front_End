@@ -24,23 +24,6 @@ class App extends React.Component {
     }
   }
 
-  // putEdit = ( id, updatedPost) => {
-  //   axios
-  //     .put(`/art/:id/${id}`, updatedPost)
-  //     .then(res => {
-  //       this.setState({
-  //         putError: res.data.putSuccess,
-  //         putSuccess: ''
-  //       });
-  //     })
-  //     .catch(err => {
-  //       this.setState({
-  //         putError: err.data.Error,
-  //         putSuccess: ''
-  //       })
-  //     });
-  // };
-
   render() {
     return (
       <div className="App">
