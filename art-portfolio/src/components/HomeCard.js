@@ -7,11 +7,6 @@ width: 90%;
 display: inline-block;
 margin: 2%;
 `
-const StyledInnerCardDiv = styled.div`
-background-color: rgba(255, 255, 255, 0.8);
-border-radius: 10px;
-padding: 10px 30px;
-`
 
 const StyledSpan = styled.span`
 padding-left: 40px;
@@ -32,6 +27,21 @@ width: 90%;
 const HomeCard = (props) => {
 
         const [likes, setLikes] = useState(props.user.likes)
+        const [isLiked, setIsLiked] = useState(false)
+
+        function likesFunction(e){
+                e.preventDefault();
+                setIsLiked(!isLiked)
+                if(isLiked === false){
+                        let oldState = likes
+                        let newState = oldState + 1
+                        return setLikes(newState)
+                } else {
+                        let oldState = likes
+                        let newState = oldState - 1
+                        return setLikes(newState)
+                }
+        } 
 
         return (
                 <StyledCardDiv>
@@ -39,8 +49,9 @@ const HomeCard = (props) => {
                         <StyledSpan />
                         {`${props.user.fname} ${props.user.lname}`}
                         <StyledSpan />
-                        <i className="far fa-heart" onClick={() => setLikes(likes + 1)}></i> 
-                        {props.user.likes}
+                        {}
+                        <i className={isLiked === true ? "fas fa-heart" : "far fa-heart"} onClick={likesFunction}></i> 
+                        {likes}
                         <br />
                         <StyledLrgImg src={props.user.src} />
                         <br />
