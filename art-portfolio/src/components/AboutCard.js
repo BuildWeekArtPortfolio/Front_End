@@ -55,13 +55,24 @@ const Button = styled.button`
 
 const AboutCard = props => {
   console.log("propys", props);
-const like = props.person.likes;
-// const [count, setCounter] = useState(0);
-// const likeButton = (prop) => {
+  const [likes, setLikes] = useState(props.person.likes);
+  const [isLiked, setIsLiked] = useState(false);
 
-//   setCounter(count + 1)
-// }
-
+  function likesFunction(e) {
+    e.preventDefault();
+    console.log(props.person.likes);
+    setIsLiked(!isLiked);
+    if (isLiked === false) {
+      let oldState = likes;
+      let newState = oldState + 1;
+      return setLikes(newState);
+    }else{
+      let oldState = likes;
+    let newState = oldState - 1;
+    return setLikes(newState);
+    }
+    
+  }
 
   return (
     <Main>
@@ -78,7 +89,7 @@ const like = props.person.likes;
           </CardTitle>
 
           <CardSubtitle>
-            Likes<Button>{like}</Button>
+            Likes<Button onClick={likesFunction}>{likes}</Button>
           </CardSubtitle>
 
           <CardSubtitle>{props.person.description}</CardSubtitle>
