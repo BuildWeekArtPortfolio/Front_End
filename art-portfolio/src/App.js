@@ -6,8 +6,6 @@ import "./styles/App.scss";
 import UploadPost from './components/UploadPost';
 import PrivateRoute from './routes/PrivateRoute';
 
-import Register2 from './components/Register2';
-
 class App extends React.Component {
 
   constructor(){
