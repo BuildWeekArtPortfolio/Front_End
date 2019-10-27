@@ -54,7 +54,8 @@ const Button = styled.button`
 `;
 
 const AboutCard = props => {
-  console.log("propys", props);
+
+  console.log("props", props);
   const [likes, setLikes] = useState(props.person.likes);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -74,14 +75,15 @@ const AboutCard = props => {
     
   }
 
+
   return (
     <Main>
       <Card>
         <CardBody>
           <CardTitle>
-            <img src={props.person.avatar} />
+            <img src={props.person.avatar} alt="avatar" />
           </CardTitle>
-          <img src={props.person.src} />
+          <img src={props.person.src} alt="main-artwork"/>
 
           <CardTitle>
             {props.person.fname}
