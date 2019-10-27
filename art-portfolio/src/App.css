@@ -49,9 +49,9 @@
 .alliesbutton {
   background-color: white; 
   color: black; 
-  border: 2px solid #850000;
+  border: 1px solid #850000;
   padding: 6px 27px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 4px 2px;
   border-radius: 5px;
   -webkit-transition-duration: 0.4s;

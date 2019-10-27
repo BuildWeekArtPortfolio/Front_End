@@ -53,14 +53,14 @@ const HomeCard = (props) => {
         return (
                 <StyledCardDiv>
                         <div>
-                                <StyledImg src={props.user.avatar} />
+                                <StyledImg src={props.user.avatar} alt="avatar" />
                                 <StyledSpan />
                                 {`${props.user.fname} ${props.user.lname}`}
                                 <StyledSpan />
                                 <i className={isLiked === true ? "fas fa-heart" : "far fa-heart"} onClick={likesFunction}></i> 
                                 {likes}
                         </div>
-                        <StyledLrgImg src={props.user.src} />
+                        <StyledLrgImg src={props.user.src} alt="main-artwork" />
                         <button onClick={descriptionFunction} className="alliesbutton">Description</button>
                         <div className={isExpanded === true ? "display" : "nodisplay"}>{props.user.description}</div>
                 </StyledCardDiv>

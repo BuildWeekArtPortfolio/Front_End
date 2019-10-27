@@ -65,9 +65,9 @@ return (
 <Card>
 <CardBody>
 <CardTitle>
-<img src={props.person.avatar} />
+<img src={props.person.avatar} alt="avatar" />
 </CardTitle>
-<img src={props.person.src} />
+<img src={props.person.src} alt="main-artwork" />
 
 <CardTitle>
 {props.person.fname}

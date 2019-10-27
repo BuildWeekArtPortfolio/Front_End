@@ -3,16 +3,10 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import Routes from "./routes/Routes";
 import "./styles/App.scss";
-import Login from './components/Login'
-import Register from './components/Register';
-
 import UploadPost from './components/UploadPost';
-
 import PrivateRoute from './routes/PrivateRoute';
 
-import axios from "axios";
-import { Upload } from "antd";
-
+import Register2 from './components/Register2';
 
 class App extends React.Component {
 
@@ -50,7 +44,7 @@ class App extends React.Component {
           path='/upload'
           component={UploadPost}
         />
-        <Navigation /> 
+        <Navigation />
         <Routes />
       </div>
     );
