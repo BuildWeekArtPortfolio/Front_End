@@ -9,6 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     axios.get("https://artportfoliobw.herokuapp.com/").then(response => {
+      console.log(response.data);
       return setUserInfo(response.data);
     });
   }, []);
