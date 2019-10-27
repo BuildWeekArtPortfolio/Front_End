@@ -57,22 +57,30 @@ const AboutCard = props => {
   console.log("propys", props);
   const [likes, setLikes] = useState(props.person.likes);
   const [isLiked, setIsLiked] = useState(false);
+  const [desc, setDesc] = useState(props.person.description);
+  const [shown, isShown] = useState(false);
 
   function likesFunction(e) {
     e.preventDefault();
-    console.log(props.person.likes);
+
     setIsLiked(!isLiked);
     if (isLiked === false) {
       let oldState = likes;
       let newState = oldState + 1;
       return setLikes(newState);
-    }else{
+    } else {
       let oldState = likes;
-    let newState = oldState - 1;
-    return setLikes(newState);
+      let newState = oldState - 1;
+      return setLikes(newState);
     }
-    
   }
+
+function descFunction(e) {
+  e.preventDefault() 
+  console.log('desc', desc);
+}
+
+  
 
   return (
     <Main>
@@ -92,7 +100,8 @@ const AboutCard = props => {
             Likes<Button onClick={likesFunction}>{likes}</Button>
           </CardSubtitle>
 
-          <CardSubtitle>{props.person.description}</CardSubtitle>
+          <CardSubtitle onClick={descFunction}><Button>Description</Button></CardSubtitle>
+          {/* {props.person.description} */}
         </CardBody>
       </Card>
     </Main>
