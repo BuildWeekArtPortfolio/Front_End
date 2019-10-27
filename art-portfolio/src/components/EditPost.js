@@ -1,5 +1,7 @@
 import React from "react";
 import { AxiosWithAuth } from "../utils/AxiosWithAuth";
+import axios from "axios";
+import Axios from "axios";
 
 class EditPost extends React.Component {
   state = {
