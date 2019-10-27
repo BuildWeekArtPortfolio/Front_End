@@ -24,6 +24,10 @@ const StyledLrgImg = styled.img`
   width: 90%;
 `;
 
+const DescriptionSection = styled.div`
+  margin: 25px auto;
+`;
+
 const HomeCard = props => {
   const [likes, setLikes] = useState(props.user.likes);
   const [isLiked, setIsLiked] = useState(false);
@@ -74,23 +78,29 @@ const HomeCard = props => {
         Description
       </button>
       <div>
-        <div
-          className={
-            isExpanded === true && isEditing === false ? "display" : "nodisplay"
-          }
-        >
-          {description}
-        </div>
-        <div
-          className={
-            isExpanded === true && isEditing === true ? "display" : "nodisplay"
-          }
-        >
-          <EditPost
-            setDescription={setDescription}
-            setIsEditing={setIsEditing}
-          />
-        </div>
+        <DescriptionSection>
+          <div
+            className={
+              isExpanded === true && isEditing === false
+                ? "display"
+                : "nodisplay"
+            }
+          >
+            {description}
+          </div>
+          <div
+            className={
+              isExpanded === true && isEditing === true
+                ? "display"
+                : "nodisplay"
+            }
+          >
+            <EditPost
+              setDescription={setDescription}
+              setIsEditing={setIsEditing}
+            />
+          </div>
+        </DescriptionSection>
         <button
           onClick={toggleIsEditing}
           className={isExpanded === true ? "display alliesbutton" : "nodisplay"}
