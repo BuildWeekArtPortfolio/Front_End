@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { OverlayTrigger } from "react-bootstrap";
 
 const Main = styled.div`
   margin: 20px auto 50px auto;
@@ -54,11 +55,9 @@ const Button = styled.button`
 `;
 
 const AboutCard = props => {
-  console.log("propys", props);
+  console.log("props", props);
   const [likes, setLikes] = useState(props.person.likes);
   const [isLiked, setIsLiked] = useState(false);
-  const [desc, setDesc] = useState(props.person.description);
-  const [shown, isShown] = useState(false);
 
   function likesFunction(e) {
     e.preventDefault();
@@ -75,21 +74,14 @@ const AboutCard = props => {
     }
   }
 
-function descFunction(e) {
-  e.preventDefault() 
-  console.log('desc', desc);
-}
-
-  
-
   return (
     <Main>
       <Card>
         <CardBody>
           <CardTitle>
-            <img src={props.person.avatar} />
+            <img src={props.person.avatar} alt="avatar" />
           </CardTitle>
-          <img src={props.person.src} />
+          <img src={props.person.src} alt="main-artwork" />
 
           <CardTitle>
             {props.person.fname}
@@ -100,8 +92,7 @@ function descFunction(e) {
             Likes<Button onClick={likesFunction}>{likes}</Button>
           </CardSubtitle>
 
-          <CardSubtitle onClick={descFunction}><Button>Description</Button></CardSubtitle>
-          {/* {props.person.description} */}
+          <CardSubtitle>{props.person.description}</CardSubtitle>
         </CardBody>
       </Card>
     </Main>

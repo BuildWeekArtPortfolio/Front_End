@@ -1,6 +1,5 @@
 import React from 'react';
 import { AxiosWithAuth } from '../utils/AxiosWithAuth';
-// import Axios from 'axios';
 
 
   class Register extends React.Component {
@@ -49,7 +48,6 @@ import { AxiosWithAuth } from '../utils/AxiosWithAuth';
           <form onSubmit={this.handleSubmit}>
   
             <div className='input-fields'>
-
               <input
                   className='username'
                   type='text'
