@@ -84,6 +84,7 @@ const Register2 = ({ errors, touched, status }) => {
 return (
     <div>
         <StyledForm className="signup-form">
+            <i class="fas fa-palette"></i>
             <Title>Register</Title>
             <SubTitle>Join the Community</SubTitle>
             {touched.username && errors.username && <StyledP className="error">{errors.username}</StyledP>}
