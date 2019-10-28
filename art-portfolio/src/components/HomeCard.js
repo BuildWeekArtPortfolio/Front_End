@@ -103,7 +103,11 @@ const HomeCard = props => {
         </DescriptionSection>
         <button
           onClick={toggleIsEditing}
-          className={isExpanded === true ? "display alliesbutton" : "nodisplay"}
+          className={
+            isExpanded === true && props.token !== null
+              ? "display alliesbutton"
+              : "nodisplay"
+          }
         >
           Edit Post
         </button>
