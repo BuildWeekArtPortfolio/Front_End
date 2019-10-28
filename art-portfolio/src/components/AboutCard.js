@@ -54,14 +54,11 @@ const Button = styled.button`
 `;
 
 const AboutCard = props => {
-
-  console.log("props", props);
   const [likes, setLikes] = useState(props.person.likes);
   const [isLiked, setIsLiked] = useState(false);
 
   function likesFunction(e) {
     e.preventDefault();
-    console.log(props.person.likes);
     setIsLiked(!isLiked);
     if (isLiked === false) {
       let oldState = likes;
