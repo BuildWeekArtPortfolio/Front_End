@@ -18,10 +18,10 @@ const Home = () => {
     <div>
       {token != null ? <UploadPost /> : <div></div>}
       {userInfo.map(user => (
-        <HomeCard user={user} />
+        <HomeCard user={user} token={token} />
       ))}
       {userInfo.map(user => (
-        <HomeCard user={user} key={Math.random()} />
+        <HomeCard user={user} key={Math.random()} token={token} />
       ))}
     </div>
   );
