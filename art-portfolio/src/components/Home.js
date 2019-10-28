@@ -1,26 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import HomeCard from './HomeCard';
-import UploadPost from './UploadPost';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import HomeCard from "./HomeCard";
+import UploadPost from "./UploadPost";
 
 const Home = () => {
+  const [userInfo, setUserInfo] = useState([]);
+  const token = localStorage.getItem("token");
 
-    const [userInfo, setUserInfo] = useState([]);
-
-useEffect( () => {
-  axios.get('https://artportfoliobw.herokuapp.com/')
-  .then(response => {
-    return setUserInfo(response.data);
-  })
-}, [])
+  useEffect(() => {
+    axios.get("https://artportfoliobw.herokuapp.com/").then(response => {
+      console.log(response.data);
+      return setUserInfo(response.data);
+    });
+  }, []);
 
   return (
     <div>
-    <UploadPost />
-      {userInfo.map((user) => <HomeCard user={user} key={Math.random()} />)}
+      {token != null ? <UploadPost /> : <div></div>}
+      {userInfo.map(user => (
+        <HomeCard user={user} token={token} />
+      ))}
+      {userInfo.map(user => (
+        <HomeCard user={user} key={Math.random()} token={token} />
+      ))}
     </div>
   );
 };
-
 
 export default Home;
